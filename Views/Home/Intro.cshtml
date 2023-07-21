@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Intro Page";
 }
 
@@ -14,20 +14,22 @@
         <form method="post">
             <div>
                 <label for = "number1">First Number</label>
-                <input type="number" id="number1" name="First Number"  />
+                <input type="number" id="number1" name="First Number" placeholder="Enter the first number " />
             </div>
 
             <div>
                 <label for = "number2">Second Number</label>
-                <input type="number" id="number2" name="Second Number" />
+                    <input type="number" id="number2" name="Second Number" placeholder="Enter the Second number " />
             </div>
 
             <div>
                <label for = "output">Result</label>
                <output id = "output" name = "output"></output>
             </div>
-
-           
+            <div>
+                <button type=" submit">Submit</button>
+                    <button type=" reset">Reset</button>
+            </div>
             
         </form>
     </div>
