@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WEB_1001_Assignment1.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-nav .nav-item.active a {
+            font-weight: bold;     
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,13 +24,16 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        <li class="nav-item @(ViewContext.RouteData.Values["action"].ToString() == "Index" &&
+                               ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item @(ViewContext.RouteData.Values["action"].ToString() == "Privacy" &&
+                               ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item @(ViewContext.RouteData.Values["action"].ToString() == "Intro" &&
+                               ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Intro">Intro</a>
                         </li>
                     </ul>
